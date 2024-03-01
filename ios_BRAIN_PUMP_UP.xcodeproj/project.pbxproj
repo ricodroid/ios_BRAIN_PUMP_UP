@@ -14,6 +14,8 @@
 		1D9C25C52B91C1A200D9C791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C25C42B91C1A200D9C791 /* Assets.xcassets */; };
 		1D9C25C82B91C1A200D9C791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C25C62B91C1A200D9C791 /* LaunchScreen.storyboard */; };
 		1D9C25D12B91C5E100D9C791 /* BrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C25CF2B91C5E100D9C791 /* BrainViewController.swift */; };
+		1D9C25D52B91D9F200D9C791 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C25D32B91D9F200D9C791 /* PopUpViewController.swift */; };
+		1D9C25D62B91D9F200D9C791 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C25D42B91D9F200D9C791 /* PopUpViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		1D9C25C72B91C1A200D9C791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D9C25C92B91C1A200D9C791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D9C25CF2B91C5E100D9C791 /* BrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainViewController.swift; sourceTree = "<group>"; };
+		1D9C25D32B91D9F200D9C791 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		1D9C25D42B91D9F200D9C791 /* PopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				1D9C25C42B91C1A200D9C791 /* Assets.xcassets */,
 				1D9C25C62B91C1A200D9C791 /* LaunchScreen.storyboard */,
 				1D9C25C92B91C1A200D9C791 /* Info.plist */,
+				1D9C25D32B91D9F200D9C791 /* PopUpViewController.swift */,
+				1D9C25D42B91D9F200D9C791 /* PopUpViewController.xib */,
 			);
 			path = ios_BRAIN_PUMP_UP;
 			sourceTree = "<group>";
@@ -131,6 +137,7 @@
 				1D9C25C82B91C1A200D9C791 /* LaunchScreen.storyboard in Resources */,
 				1D9C25C52B91C1A200D9C791 /* Assets.xcassets in Resources */,
 				1D9C25C32B91C1A100D9C791 /* Main.storyboard in Resources */,
+				1D9C25D62B91D9F200D9C791 /* PopUpViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9C25D52B91D9F200D9C791 /* PopUpViewController.swift in Sources */,
 				1D9C25C02B91C1A100D9C791 /* MainViewController.swift in Sources */,
 				1D9C25BC2B91C1A100D9C791 /* AppDelegate.swift in Sources */,
 				1D9C25BE2B91C1A100D9C791 /* SceneDelegate.swift in Sources */,

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QDZ-Y1-3tH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -90,13 +91,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="254-y1-oMD">
-                                <rect key="frame" x="179.33333333333334" y="586" width="34.666666666666657" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="170" y="586" width="53" height="31.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWH-kD-WdA">
-                                <rect key="frame" x="0.0" y="767" width="393" height="35"/>
+                                <rect key="frame" x="0.0" y="743.33333333333337" width="393" height="35"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="スタート"/>
@@ -107,27 +108,54 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="sGX-gB-G7p">
                                 <rect key="frame" x="50" y="133" width="293" height="240"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCp-4D-jLP">
+                                <rect key="frame" x="0.0" y="693.33333333333337" width="393" height="35"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.0" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="筋トレ終了"/>
+                                <connections>
+                                    <action selector="endAction:" destination="7SO-5k-2Bp" eventType="touchUpInside" id="Lyr-Ia-l7T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MZ-VS-bnK">
+                                <rect key="frame" x="0.0" y="799.33333333333337" width="393" height="35"/>
+                                <color key="backgroundColor" red="0.0" green="0.35686274509999999" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="休憩"/>
+                                <connections>
+                                    <action selector="stop:" destination="7SO-5k-2Bp" eventType="touchUpInside" id="Vhy-17-n8L"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bnt-uD-R4e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bnt-uD-R4e" firstAttribute="trailing" secondItem="sGX-gB-G7p" secondAttribute="trailing" constant="50" id="4xb-S8-xu6"/>
                             <constraint firstItem="sGX-gB-G7p" firstAttribute="leading" secondItem="bnt-uD-R4e" secondAttribute="leading" constant="50" id="5mF-jk-yLY"/>
+                            <constraint firstItem="ZWH-kD-WdA" firstAttribute="top" secondItem="JCp-4D-jLP" secondAttribute="bottom" constant="15" id="6kY-Gz-ZmA"/>
                             <constraint firstItem="gnK-o2-vOE" firstAttribute="top" secondItem="sGX-gB-G7p" secondAttribute="bottom" constant="56" id="F9V-WN-ZYX"/>
-                            <constraint firstItem="ZWH-kD-WdA" firstAttribute="top" secondItem="254-y1-oMD" secondAttribute="bottom" constant="160" id="VAU-eA-dve"/>
+                            <constraint firstItem="2MZ-VS-bnK" firstAttribute="leading" secondItem="bnt-uD-R4e" secondAttribute="leading" id="Ij9-e3-XgL"/>
+                            <constraint firstItem="bnt-uD-R4e" firstAttribute="trailing" secondItem="2MZ-VS-bnK" secondAttribute="trailing" id="Tot-bM-s0b"/>
+                            <constraint firstItem="2MZ-VS-bnK" firstAttribute="top" secondItem="ZWH-kD-WdA" secondAttribute="bottom" constant="21" id="Y4l-xR-S9s"/>
                             <constraint firstItem="254-y1-oMD" firstAttribute="centerX" secondItem="9oe-MA-6cA" secondAttribute="centerX" id="a6y-0g-6sI"/>
+                            <constraint firstItem="bnt-uD-R4e" firstAttribute="trailing" secondItem="JCp-4D-jLP" secondAttribute="trailing" id="cZF-BB-dgX"/>
                             <constraint firstItem="gnK-o2-vOE" firstAttribute="centerX" secondItem="9oe-MA-6cA" secondAttribute="centerX" id="g5J-B4-qZM"/>
                             <constraint firstItem="254-y1-oMD" firstAttribute="top" secondItem="gnK-o2-vOE" secondAttribute="bottom" constant="136" id="grc-x6-vGJ"/>
                             <constraint firstItem="sGX-gB-G7p" firstAttribute="top" secondItem="bnt-uD-R4e" secondAttribute="top" constant="30" id="jLe-dM-CFQ"/>
+                            <constraint firstItem="JCp-4D-jLP" firstAttribute="top" secondItem="254-y1-oMD" secondAttribute="bottom" constant="76" id="ksz-T0-L5F"/>
                             <constraint firstItem="sGX-gB-G7p" firstAttribute="centerX" secondItem="9oe-MA-6cA" secondAttribute="centerX" id="kvT-9V-8Ae"/>
+                            <constraint firstItem="JCp-4D-jLP" firstAttribute="centerX" secondItem="9oe-MA-6cA" secondAttribute="centerX" id="mxl-NW-Fu1"/>
                             <constraint firstItem="bnt-uD-R4e" firstAttribute="trailing" secondItem="ZWH-kD-WdA" secondAttribute="trailing" id="ooH-Fd-Eb5"/>
                             <constraint firstItem="ZWH-kD-WdA" firstAttribute="leading" secondItem="bnt-uD-R4e" secondAttribute="leading" id="pLy-q1-uCh"/>
+                            <constraint firstItem="2MZ-VS-bnK" firstAttribute="centerX" secondItem="9oe-MA-6cA" secondAttribute="centerX" id="uJC-S8-qCH"/>
                             <constraint firstItem="ZWH-kD-WdA" firstAttribute="centerX" secondItem="9oe-MA-6cA" secondAttribute="centerX" id="uLG-qS-oTI"/>
+                            <constraint firstItem="JCp-4D-jLP" firstAttribute="leading" secondItem="bnt-uD-R4e" secondAttribute="leading" id="wfw-MI-33x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z5T-qY-Hbu"/>
                     <connections>
                         <outlet property="charaImage" destination="sGX-gB-G7p" id="PKK-Ep-dBi"/>
+                        <outlet property="timeLabel" destination="254-y1-oMD" id="tmU-J5-PtH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxO-VY-FYq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
