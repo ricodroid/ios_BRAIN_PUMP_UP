@@ -16,6 +16,7 @@
 		1D9C25D12B91C5E100D9C791 /* BrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C25CF2B91C5E100D9C791 /* BrainViewController.swift */; };
 		1D9C25D52B91D9F200D9C791 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C25D32B91D9F200D9C791 /* PopUpViewController.swift */; };
 		1D9C25D62B91D9F200D9C791 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C25D42B91D9F200D9C791 /* PopUpViewController.xib */; };
+		1D9C25D92B91DF4000D9C791 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9C25D82B91DF4000D9C791 /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1D9C25CF2B91C5E100D9C791 /* BrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainViewController.swift; sourceTree = "<group>"; };
 		1D9C25D32B91D9F200D9C791 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		1D9C25D42B91D9F200D9C791 /* PopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpViewController.xib; sourceTree = "<group>"; };
+		1D9C25D82B91DF4000D9C791 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		1D9C25BA2B91C1A100D9C791 /* ios_BRAIN_PUMP_UP */ = {
 			isa = PBXGroup;
 			children = (
+				1D9C25D72B91DF1400D9C791 /* util */,
 				1D9C25CF2B91C5E100D9C791 /* BrainViewController.swift */,
 				1D9C25BB2B91C1A100D9C791 /* AppDelegate.swift */,
 				1D9C25BD2B91C1A100D9C791 /* SceneDelegate.swift */,
@@ -74,6 +77,14 @@
 				1D9C25D42B91D9F200D9C791 /* PopUpViewController.xib */,
 			);
 			path = ios_BRAIN_PUMP_UP;
+			sourceTree = "<group>";
+		};
+		1D9C25D72B91DF1400D9C791 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				1D9C25D82B91DF4000D9C791 /* UserDefaultsManager.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D9C25D52B91D9F200D9C791 /* PopUpViewController.swift in Sources */,
+				1D9C25D92B91DF4000D9C791 /* UserDefaultsManager.swift in Sources */,
 				1D9C25C02B91C1A100D9C791 /* MainViewController.swift in Sources */,
 				1D9C25BC2B91C1A100D9C791 /* AppDelegate.swift in Sources */,
 				1D9C25BE2B91C1A100D9C791 /* SceneDelegate.swift in Sources */,

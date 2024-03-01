@@ -30,7 +30,7 @@ class BrainViewController: UIViewController {
         }
     }
 
-
+    // アニメーションをスタートさせる
     @IBAction func attackBtn(_ sender: Any) {
         // アニメーションの適用
         charaImage.animationImages = imageArrayAttack
@@ -44,11 +44,21 @@ class BrainViewController: UIViewController {
         startTimer()
     }
     
-    
+    // タイマーストップボタン
     @IBAction func stop(_ sender: Any) {
         stopTimer()
     }
     
+    // 筋トレ終了ボタン
+    @IBAction func endAction(_ sender: Any) {
+        // ポップアップを表示する
+        let popUpView = PopUpViewController()
+        popUpView.appear(sender: self)
+        
+        stopTimer()
+        
+        // TODO 筋トレを終了した時点での稼働時間を端末内に保存する
+    }
     
     private func startTimer() {
         
@@ -69,13 +79,18 @@ class BrainViewController: UIViewController {
         self.doTimer = false
     }
     
-    // 筋トレ終了ボタン
-    @IBAction func endAction(_ sender: Any) {
-        // ポップアップを表示する
-        let popUpView = PopUpViewController()
-        popUpView.appear(sender: self)
-        
-        stopTimer()
-    }
+    
+   // データの保存
+//    UserDefaultsManager.saveData("Hello, UserDefaults!")
+//
+//    // 保存したデータの取り出し
+//    if let retrievedData = UserDefaultsManager.retrieveData() {
+//        print("Retrieved Data: \(retrievedData)")
+//    } else {
+//        print("No data found.")
+//    }
+//
+//    // 保存したデータの削除
+//    UserDefaultsManager.removeData()
     
 }
