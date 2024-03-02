@@ -10,21 +10,22 @@ import Foundation
 // 端末内にデータを保存したり、取り出したりするクラス
 class UserDefaultsManager: NSObject {
     // UserDefaultsのキーを定義
-    private static let timeDataKey = "SavedTime"
+    public static let timeDataKey = "SavedTime"
+    public static let totalTimeDataKey = "TotalSavedTime"
     
     // 保存するデータの型に合わせたクラスメソッド
-    static func saveData(_ data: String) {
-        print("端末内に経過時間を保存")
+    static func saveData(_ data: String, key: String) {
+        print("端末内にデータを保存")
         // UserDefaultsにデータを保存
-        UserDefaults.standard.set(data, forKey: timeDataKey)
+        UserDefaults.standard.set(data, forKey: key)
         // 保存を即座に反映させる
         UserDefaults.standard.synchronize()
     }
     
     // 保存したデータを取り出すクラスメソッド
-    static func retrieveData() -> String? {
+    static func retrieveData(key: String) -> String? {
         // UserDefaultsからデータを取り出す
-        if let savedData = UserDefaults.standard.string(forKey: timeDataKey) {
+        if let savedData = UserDefaults.standard.string(forKey: key) {
             return savedData
         } else {
             return nil
@@ -32,8 +33,8 @@ class UserDefaultsManager: NSObject {
     }
     
     // 保存したデータを削除するクラスメソッド
-    static func removeData() {
-        UserDefaults.standard.removeObject(forKey: timeDataKey)
+    static func removeData(key: String) {
+        UserDefaults.standard.removeObject(forKey: key)
         // 削除を即座に反映させる
         UserDefaults.standard.synchronize()
     }

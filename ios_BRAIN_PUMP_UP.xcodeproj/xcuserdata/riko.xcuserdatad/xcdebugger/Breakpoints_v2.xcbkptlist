@@ -3,4 +3,54 @@
    uuid = "9694B35F-9C97-4AC3-BE99-35AD0F1A556E"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8BA3CDD7-43CD-49A1-B3F8-1254E5E10E5A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios_BRAIN_PUMP_UP/PopUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "OnOkButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8BA3CDD7-43CD-49A1-B3F8-1254E5E10E5A - 5d6062f29fff0b34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ios_BRAIN_PUMP_UP.PopUpViewController.OnOkButton(Any) -&gt; ()"
+                  moduleName = "ios_BRAIN_PUMP_UP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/riko/ricodroid_mudadukuri/ios_BRAIN_PUMP_UP/ios_BRAIN_PUMP_UP/PopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "8BA3CDD7-43CD-49A1-B3F8-1254E5E10E5A - 5d6062f29fff0c9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ios_BRAIN_PUMP_UP.PopUpViewController.OnOkButton(Any) -&gt; ()"
+                  moduleName = "ios_BRAIN_PUMP_UP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/riko/ricodroid_mudadukuri/ios_BRAIN_PUMP_UP/ios_BRAIN_PUMP_UP/PopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -7,7 +7,18 @@
 
 import UIKit
 
-class BrainViewController: UIViewController {
+class BrainViewController: UIViewController, PopUpViewControllerDelegate {
+    func okButtonTapped() {
+        print("ダイアログのOKボタンがタップされました")
+        // ダイアログのOKボタンがタップされた
+        self.dismiss(animated: true) {
+            // ダイアログが閉じた後にMainViewControllerを表示
+            let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            mainViewController.modalPresentationStyle = .fullScreen
+            self.present(mainViewController, animated: true, completion: nil)
+        }
+    }
+    
     
     private var time:Double = 0.0
     private var timer:Timer = Timer()
@@ -23,13 +34,13 @@ class BrainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // アニメーションする画像を配列に格納
         while let attackImage = UIImage(named: "image\(imageArrayAttack.count+1)") {
             imageArrayAttack.append(attackImage)
         }
     }
-
+    
     // アニメーションをスタートさせる
     @IBAction func attackBtn(_ sender: Any) {
         // アニメーションの適用
@@ -51,9 +62,11 @@ class BrainViewController: UIViewController {
     
     // 筋トレ終了ボタン
     @IBAction func endAction(_ sender: Any) {
-        UserDefaultsManager.saveData(timeLabel.text!)
+        UserDefaultsManager.saveData(timeLabel.text!, key: UserDefaultsManager.timeDataKey)
         // ポップアップを表示する
         let popUpView = PopUpViewController()
+        popUpView.delegate = self // デリゲートを設定
+        
         popUpView.appear(sender: self)
         
         stopTimer()
@@ -70,7 +83,7 @@ class BrainViewController: UIViewController {
             })
             self.doTimer = true
         }
-       
+        
     }
     
     private func stopTimer() {
@@ -79,17 +92,17 @@ class BrainViewController: UIViewController {
     }
     
     
-   // データの保存
-//    UserDefaultsManager.saveData("Hello, UserDefaults!")
-//
-//    // 保存したデータの取り出し
-//    if let retrievedData = UserDefaultsManager.retrieveData() {
-//        print("Retrieved Data: \(retrievedData)")
-//    } else {
-//        print("No data found.")
-//    }
-//
-//    // 保存したデータの削除
-//    UserDefaultsManager.removeData()
+    // データの保存
+    //    UserDefaultsManager.saveData("Hello, UserDefaults!")
+    //
+    //    // 保存したデータの取り出し
+    //    if let retrievedData = UserDefaultsManager.retrieveData() {
+    //        print("Retrieved Data: \(retrievedData)")
+    //    } else {
+    //        print("No data found.")
+    //    }
+    //
+    //    // 保存したデータの削除
+    //    UserDefaultsManager.removeData()
     
 }

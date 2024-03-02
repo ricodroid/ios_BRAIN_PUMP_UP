@@ -7,10 +7,18 @@
 
 import UIKit
 
+protocol PopUpViewControllerDelegate: AnyObject {
+    func okButtonTapped()
+}
+
 class PopUpViewController: UIViewController {
+    
+    weak var delegate: PopUpViewControllerDelegate?
 
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentView: UIView!
+    
+    private var time = "00:00"
     // 勉強時間をここに記録する
     @IBOutlet weak var dialogTitle: UILabel!
     
@@ -22,6 +30,13 @@ class PopUpViewController: UIViewController {
     @IBAction func OnOkButton(_ sender: Any) {
         hide()
         // はいボタンクリック
+        // ここまでの時間を端末内に保存されているトータルタイムにプラスして保存する
+        let currentTime = UserDefaultsManager.retrieveData(key: UserDefaultsManager.totalTimeDataKey)
+        let totalTime = calculateTotalTime(currentTime: currentTime!, selfTime: self.time)
+        // 合計時間を保存する
+        UserDefaultsManager.saveData(totalTime!, key: UserDefaultsManager.totalTimeDataKey)
+        
+        delegate?.okButtonTapped()
     }
     
     @IBOutlet weak var mainMessage: UILabel!
@@ -37,16 +52,14 @@ class PopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var time = "初期データー"
               // 保存したデータの取り出し
-              if let retrievedData = UserDefaultsManager.retrieveData() {
+        if let retrievedData = UserDefaultsManager.retrieveData(key: UserDefaultsManager.timeDataKey) {
                   print("端末内から取得したデータ: \(retrievedData)")
-                  time = retrievedData
+            self.time = retrievedData
               } else {
                   print("端末内Data: No data found.")
               }
-              self.dialogTitle.text = time
+              self.dialogTitle.text = self.time
 
         textAdjust()
         configView()
@@ -54,11 +67,10 @@ class PopUpViewController: UIViewController {
     
     // テキストの行間を広げる
     private func textAdjust() {
-        var time = "初期データー"
         // 保存したデータの取り出し
-        if let retrievedData = UserDefaultsManager.retrieveData() {
+        if let retrievedData = UserDefaultsManager.retrieveData(key: UserDefaultsManager.timeDataKey) {
             print("端末内から取得したデータ: \(retrievedData)")
-            time = retrievedData
+            self.time = retrievedData
         } else {
             print("端末内Data: No data found.")
         }
@@ -68,7 +80,7 @@ class PopUpViewController: UIViewController {
         paragraphStyle.lineSpacing = lineSpacing
         
         let attributedString = NSAttributedString(
-            string: time,
+            string: self.time,
             attributes: [
                 .paragraphStyle: paragraphStyle
             ]
@@ -120,5 +132,25 @@ class PopUpViewController: UIViewController {
             self.dismiss(animated: false)
             self.removeFromParent()
         }
+    }
+    
+    func calculateTotalTime(currentTime: String, selfTime: String) -> String? {
+        // DateFormatterを作成して、文字列をDate型に変換
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "mm:ss" // フォーマットに合わせて調整する
+        
+        guard let currentTimeDate = dateFormatter.date(from: currentTime),
+              let selfTimeDate = dateFormatter.date(from: selfTime) else {
+            return nil
+        }
+        
+        // 時間を加算
+        let totalTimeInterval = currentTimeDate.timeIntervalSinceReferenceDate + selfTimeDate.timeIntervalSinceReferenceDate
+        
+        // 合計時間をStringに変換して返す
+        let totalTimeDate = Date(timeIntervalSinceReferenceDate: totalTimeInterval)
+        let totalTimeString = dateFormatter.string(from: totalTimeDate)
+        
+        return totalTimeString
     }
 }
