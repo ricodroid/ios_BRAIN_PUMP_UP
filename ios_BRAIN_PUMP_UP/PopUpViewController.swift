@@ -11,14 +11,17 @@ class PopUpViewController: UIViewController {
 
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var contentView: UIView!
-    
+    // 勉強時間をここに記録する
+    @IBOutlet weak var dialogTitle: UILabel!
     
     @IBAction func OnNegativeButton(_ sender: Any) {
         hide()
+        // いいえボタンクリック
     }
     
     @IBAction func OnOkButton(_ sender: Any) {
         hide()
+        // はいボタンクリック
     }
     
     @IBOutlet weak var mainMessage: UILabel!
@@ -34,6 +37,16 @@ class PopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var time = "初期データー"
+              // 保存したデータの取り出し
+              if let retrievedData = UserDefaultsManager.retrieveData() {
+                  print("端末内から取得したデータ: \(retrievedData)")
+                  time = retrievedData
+              } else {
+                  print("端末内Data: No data found.")
+              }
+              self.dialogTitle.text = time
 
         textAdjust()
         configView()
@@ -41,18 +54,39 @@ class PopUpViewController: UIViewController {
     
     // テキストの行間を広げる
     private func textAdjust() {
-        let mainMessageText = "ちょっと行間にスペースを持たせるテキスト\n来週からスリランカに行く！！"
+        var time = "初期データー"
+        // 保存したデータの取り出し
+        if let retrievedData = UserDefaultsManager.retrieveData() {
+            print("端末内から取得したデータ: \(retrievedData)")
+            time = retrievedData
+        } else {
+            print("端末内Data: No data found.")
+        }
+        
         let lineSpacing: CGFloat = 8.0
         let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.lineSpacing = lineSpacing
         
         let attributedString = NSAttributedString(
+            string: time,
+            attributes: [
+                .paragraphStyle: paragraphStyle
+            ]
+        )
+        dialogTitle.attributedText = attributedString
+        dialogTitle.textAlignment = .center
+        
+        let mainMessageText = "ちょっと行間にスペースを持たせるテキスト\n来週からスリランカに行く！！"
+       
+            paragraphStyle.lineSpacing = lineSpacing
+        
+        let attributedString2 = NSAttributedString(
                 string: mainMessageText,
                 attributes: [
                     .paragraphStyle: paragraphStyle
                 ]
             )
-        mainMessage.attributedText = attributedString
+        mainMessage.attributedText = attributedString2
         mainMessage.textAlignment = .center
     }
 

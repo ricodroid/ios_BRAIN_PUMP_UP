@@ -14,6 +14,7 @@ class UserDefaultsManager: NSObject {
     
     // 保存するデータの型に合わせたクラスメソッド
     static func saveData(_ data: String) {
+        print("端末内に経過時間を保存")
         // UserDefaultsにデータを保存
         UserDefaults.standard.set(data, forKey: timeDataKey)
         // 保存を即座に反映させる

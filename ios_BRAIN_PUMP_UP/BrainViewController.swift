@@ -51,13 +51,12 @@ class BrainViewController: UIViewController {
     
     // 筋トレ終了ボタン
     @IBAction func endAction(_ sender: Any) {
+        UserDefaultsManager.saveData(timeLabel.text!)
         // ポップアップを表示する
         let popUpView = PopUpViewController()
         popUpView.appear(sender: self)
         
         stopTimer()
-        
-        // TODO 筋トレを終了した時点での稼働時間を端末内に保存する
     }
     
     private func startTimer() {
